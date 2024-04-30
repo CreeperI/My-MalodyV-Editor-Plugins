@@ -8,5 +8,5 @@
 *  For the MalodyV version under 6.0.0, you should create a folder and named it  "editor" in maV's root folder, then put the lua files and its
  appended files into the folder. Then, it will display in your editor gui.
  
-*  For the version later 6.0.0 you can import plugin directly by tapping the top-left button on the editor, then you will see the import
-button.
+*  For the version later 6.0.0 ,you can import plugin directly by tapping the top-left button on the editor, then you will see the import
+button. Of course, the method used in the version under 6.0.0 is also useable.
