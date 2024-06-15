@@ -1,6 +1,7 @@
 --Plugin Made By Creeper_001
 --Bezier part was inspired by qwws
---使用提示：小tap代表控制点1，大tap表示控制点2，两个wipe代表起终点，控制点不可超过起终点的时间范围
+--使用提示：小tap代表控制点1；大tap表示控制点2；两个wipe代表起终点且控制点不可超过起终点的时间范围
+--Caution: Use the shorter and longer tap to stands for the control point1 and 2 which are between; Use 2 wipes to appoint the start time and the end time
 PluginName='wipe_Bezier'
 PluginMode=7
 PluginType=0
@@ -38,7 +39,7 @@ function Get_Start_End_Info()--获取起终点信息
 		EndX=f:GetNoteX(st_ed_p[1])
 		TotalWidth=f:GetNoteWidth(st_ed_p[2])
 	else
-		f:ShowMessage('起终点时间不能相同')
+		f:ShowMessage('起终点时间不能相同\nThe time of start point should be different from the end point.')
 		StartBeatf=nil
 		StartBeat=nil
 	end
@@ -60,12 +61,12 @@ function GetControlInfo()
 			p2_Beatf=beat2float(f:GetNoteBeat(control_p[1],true))
 			p2_X=f:GetNoteX(control_p[1])
 		else
-			f:ShowMessage("请使tap宽度不同以区分控制点，小tap为控制点1，大tap为控制点2")
+			f:ShowMessage("请使tap宽度不同以区分控制点，小tap为控制点1，大tap为控制点2\nPlease use 2 taps whose width are different,\nthe shorter and longer tap stands for the control point1 and 2.")
 			p1_Beat=nil
 			p1_Beatf=nil
 		end
 	else
-		f:ShowMessage("控制点不应超过起终点")
+		f:ShowMessage("控制点不应超过起终点\nThe control points should between the start and the end points.")
 		p1_Beat=nil
 		p1_Beatf=nil
 	end
@@ -144,7 +145,7 @@ function Run()
 		f:DeleteNote(control_p[1])
 		f:DeleteNote(control_p[2])
 	else
-		f:ShowMessage("wipe和tap各只能选2个")
+		f:ShowMessage("wipe和tap各只能选2个\nYou can only choose 2 wipes and 2 taps.")
 	end
 	f:FinishBatch()
 end

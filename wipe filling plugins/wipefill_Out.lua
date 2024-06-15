@@ -79,7 +79,7 @@ function Run()
 	  	Editor:SetNoteWidth(nid,StartWidth+easing(WidthChanged,beat_times,i))
 	  end
 	else
-		Editor:ShowMessage("只能选择2个note")
+		Editor:ShowMessage("只能选择2个note\nYou can only choose 2 notes.")
 	end
 	Editor:FinishBatch()
 end
