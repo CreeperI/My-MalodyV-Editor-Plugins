@@ -65,12 +65,12 @@
         "prefix": "Editor:GetNoteSlideBodyCount"
     },
     "GetNoteSlideBodyBeat": {
-        "body": "Editor:GetNoteSlideBodyBeat(${1:id},${0:int(slide\u6307\u5b9a\u7247\u6bb5\u7684\u503c)})",
+        "body": "Editor:GetNoteSlideBodyBeat(${1:id},${0:int})",
         "description": "GetNoteSlideBodyBeat",
         "prefix": "Editor:GetNoteSlideBodyBeat"
     },
     "GetNoteSlideBodyX": {
-        "body": "Editor:GetNoteSlideBodyX(${1:id},${0:int(slide\u6307\u5b9a\u7247\u6bb5\u7684\u503c)})",
+        "body": "Editor:GetNoteSlideBodyX(${1:id},${0:int})",
         "description": "GetNoteSlideBodyX",
         "prefix": "Editor:GetNoteSlideBodyX"
     },
@@ -90,12 +90,12 @@
         "prefix": "Editor:GetClickBeatFree[6.0.0+]"
     },
     "ChartInfo": {
-        "body": "Editor:ChartInfo(${0:key(version|creator|title|artist|bpm|level|key,\u8f68\u9053\u6570)})",
+        "body": "Editor:ChartInfo(${0:key(version|creator|title|artist|bpm|level|key)})",
         "description": "ChartInfo",
         "prefix": "Editor:ChartInfo[6.0.0+]"
     },
     "SetResult": {
-        "body": "Editor:SetResult(${1:bool},${0:string(\u663e\u793a\u7684\u5931\u8d25\u539f\u56e0)})",
+        "body": "Editor:SetResult(${1:bool},${0:string})",
         "description": "SetResult",
         "prefix": "Editor:SetResult"
     },
@@ -115,7 +115,7 @@
         "prefix": "Editor:DeleteNote"
     },
     "AddNote": {
-        "body": "Editor:AddNote(${0:type(note\u7c7b\u578b,int)})",
+        "body": "Editor:AddNote(${0:type})",
         "description": "AddNote",
         "prefix": "Editor:AddNote"
     },
@@ -145,7 +145,7 @@
         "prefix": "Editor:AddNoteSlideBody"
     },
     "SetNoteSlideBodyX": {
-        "body": "Editor:SetNoteSlideBodyX(${1:id},${2:int(\u8282\u70b9)},${0:int(X\u504f\u79fb)})",
+        "body": "Editor:SetNoteSlideBodyX(${1:id},${2:int},${0:int})",
         "description": "SetNoteSlideBodyX",
         "prefix": "Editor:SetNoteSlideBodyX"
     },
@@ -259,7 +259,7 @@
             "PluginName=$1",
             "PluginMode=$2",
             "PluginType=$3",
-            "PluginIcon=${4:这行可选可不选}",
+            "PluginIcon=${4:This line is optional}",
             "PluginRequire=$0"
         ],
         "description": "pluginHead",
