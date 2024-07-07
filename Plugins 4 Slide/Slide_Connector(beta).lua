@@ -1,3 +1,4 @@
+--Plugin Made By Creeper_001
 PluginName = 'Slide Connector'
 PluginMode = 7
 PluginType = 0
