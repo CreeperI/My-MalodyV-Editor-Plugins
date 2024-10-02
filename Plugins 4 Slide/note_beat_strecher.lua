@@ -37,20 +37,16 @@ function GetBeatValueMaxorMin()
             min = nbeatf
             minbeat = nbeat
         end
-        if ntype == Slide then
-            local slidebodycount = Editor:GetNoteSlideBodyCount(Notes[n])
-            for body = 0, slidebodycount - 1 do
-                local bodybeat = Editor:GetNoteSlideBodyBeat(Notes[n], body)
-                local bodybeat = Editor:BeatAdd(bodybeat, nbeat)
-                local bodybeatf = Beat2float(bodybeat)
-                if bodybeatf > max then
-                    max = bodybeatf
-                    maxbeat = bodybeat
-                end
-                if nbeatf < min then
-                    min = bodybeatf
-                    minbeat = bodybeat
-                end
+       if ntype == Slide then
+            local nendbeat=Editor:GetNoteBeat(Notes[n],false)
+            local nendbeatf=Beat2float(nendbeat)
+            if nendbeatf > max then
+                max = nendbeatf
+                maxbeat = nendbeat
+            end
+            if nendbeatf < min then
+                min = nendbeatf
+                minbeat = nendbeat
             end
         end
     end
