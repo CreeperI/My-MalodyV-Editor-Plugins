@@ -95,5 +95,5 @@ function Run()
     notes = Editor:GetSelectNotes()
     ValueList = GetMaxandMinValue(notes)
     Editor:GetUserInput("输入缩放中心(0/1/2)", GetAlign)
-    Editor:ShowMessage("0代表中心，1表示最左，2表示最右")
+    Editor:ShowMessage("0代表中心，1表示左对齐，2表示右对齐")
 end
