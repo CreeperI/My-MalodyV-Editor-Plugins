@@ -135,6 +135,6 @@ end
 function Run()
     Notes = Editor:GetSelectNotes()
     Valuelist = GetBeatValueMaxorMin()
+    Editor:ShowMessage("0为以最底部note为缩放中心，1为最顶部note为缩放中心")
     Editor:GetUserInput("输入缩放中心(0/1)", GetAlign)
-    Editor:ShowMessage("0为以以最底部note为中心，1为最顶部为中心")
 end
