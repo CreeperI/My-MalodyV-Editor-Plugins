@@ -13,4 +13,4 @@
   *  For the version later 6.0.0 ,you can import plugin directly by tapping the top-left button in the Editor, then you will see the import button. Of course, the method used in the version under 6.0.0 is also useable.
 
 ## Other you should attention
-  *  The plugins with appended files I will put them in the repository as zip files. When you import plugins by yourself, put the plugin files in the .zip files instead of the .zip files.
+  *  The plugins with appended files I will put them in the repository as zip files. When you import plugins by yourself, put the plugin files inside the .zip files instead of the .zip files itself.
