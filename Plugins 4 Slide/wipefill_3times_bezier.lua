@@ -88,10 +88,10 @@ function Bezier(pointlistx,pointlisty,tar)
 	while math.abs(bst-bed)>acc do
 		fa=math.abs(formula_Bezier(pointlistx,bst)-tar)
 		fb=math.abs(formula_Bezier(pointlistx,bed)-tar)
-		if fa<fb then--→
+		if fa<fb then
 			bmid=(bst+bed)/2
 			bed=bed-acc
-		elseif fa>fb then--→
+		elseif fa>fb then
 			bmid=(bst+bed)/2
 			bst=bst+acc
 		elseif fa==0 then
@@ -122,13 +122,11 @@ function Run()
 			table.insert(control_p,notes[i])
 		end
 	end
---分割线--
 	if #st_ed_p==2 and #control_p==2 then
 		Get_Start_End_Info()
 		GetControlInfo()
 		px={StartBeatf,p1_Beatf,p2_Beatf,EndBeatf}
 		py={StartX,p1_X,p2_X,EndX}
---分割线
 		div=f:GetCurrentDivide()
 		Beat_Unit=f:MakeBeat(0,1,div)
 		TotalBeat=f:BeatMinus(EndBeat,StartBeat)
