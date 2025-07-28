@@ -1,3 +1,4 @@
+-- Plugin By Creeper_001
 PluginName = "‎下个书签"
 PluginType = 0
 PluginMode = 7
