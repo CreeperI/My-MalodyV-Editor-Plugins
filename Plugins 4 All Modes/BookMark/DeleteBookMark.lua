@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 -- Plugin By Creeper_001
+=======
+--Plugin By Creeper_001
+>>>>>>> 6565d4d354a094c0b4ce39fb2ee1c0ae3957da7b
 PluginName = "‎删除书签"
 PluginType = 0
 PluginMode = 7

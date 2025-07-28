@@ -1,10 +1,12 @@
+<<<<<<< HEAD
 -- Plugin By Creeper_001
+=======
+--Plugin By Creeper_001
+>>>>>>> 6565d4d354a094c0b4ce39fb2ee1c0ae3957da7b
 PluginName = "‎添修书签"
 PluginType = 0
 PluginMode = 7
 PluginRequire = "6.0.52"
-
---require "base"
 
 function PrintBeat(b, mark)
     print(string.format("%s{%d,%d,%d}", mark, b.beat, b.numor, b.denom))
@@ -19,7 +21,6 @@ function ReadBookMark(line)
     return t
 end
 
--- return b1>b2
 function BeatLarger(b1, b2)
     PrintBeat(b1, "BeatLarger_b1:")
     PrintBeat(b2, "BeatLarger_b2:")
@@ -155,7 +156,6 @@ function Main(userinput)
         goto writeFile
     end
 
-    --print("namekind:",name,type(name))
     DrawBookMark(curBeat, name, Beat2ID(curBeat))
     Editor:WriteData("bookmark", cnt, FormatBookMark(curBeat, name))
     cnt = cnt + 1
@@ -168,8 +168,6 @@ function Main(userinput)
 end
 
 function Run()
-    --print(base.con)
-    print(utf8.offset("a好好好", 3))
     FIRST_USE = false
     local content_file = Editor:ReadFile("BookMark.txt")
 

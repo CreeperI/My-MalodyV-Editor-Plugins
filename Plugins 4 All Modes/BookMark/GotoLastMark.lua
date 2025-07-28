@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 -- Plugin By Creeper_001
+=======
+--Plugin By Creeper_001
+>>>>>>> 6565d4d354a094c0b4ce39fb2ee1c0ae3957da7b
 PluginName = "‎上个书签"
 PluginType = 0
 PluginMode = 7
@@ -11,7 +15,6 @@ function ReadMarkBeat(line)
     end
 end
 
--- return b1>b2 
 function BeatLarger(b1, b2)
     if b1.beat > b2.beat then
         return true
