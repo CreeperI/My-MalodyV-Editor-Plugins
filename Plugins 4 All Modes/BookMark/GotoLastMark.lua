@@ -1,16 +1,12 @@
-<<<<<<< HEAD
--- Plugin By Creeper_001
-=======
 --Plugin By Creeper_001
->>>>>>> 6565d4d354a094c0b4ce39fb2ee1c0ae3957da7b
 PluginName = "‎上个书签"
 PluginType = 0
 PluginMode = 7
 PluginRequire = "6.0.52"
 
 function ReadMarkBeat(line)
-    for b1,b2,b3 in string.gmatch(line,"Beat:{(%d+),(%d+),(%d+)}") do
-        local b=Editor:MakeBeat(b1,b2,b3)
+    for b1, b2, b3 in string.gmatch(line, "Beat:{(%d+),(%d+),(%d+)}") do
+        local b = Editor:MakeBeat(b1, b2, b3)
         return b
     end
 end
@@ -27,21 +23,21 @@ end
 
 function Run()
     local curBeat = Editor:GetCurrentBeat()
-    local cnt=Editor:ReadData("bookmark","count")
-    local LastBeat,LastLine,lid
-    for i=0,cnt-1 do
-        lid=math.ceil(cnt-1-i)
-        print("lid",lid)
-        LastLine=Editor:ReadData("bookmark",tostring(lid))
-        print("lastL",LastLine)
-        LastBeat=ReadMarkBeat(LastLine)
-        if BeatLarger(curBeat,LastBeat) then
-            LastLine=Editor:ReadData("bookmark",tostring(i))
+    local cnt = Editor:ReadData("bookmark", "count")
+    local LastBeat, LastLine, lid
+    for i = 0, cnt - 1 do
+        lid = math.ceil(cnt - 1 - i)
+        print("lid", lid)
+        LastLine = Editor:ReadData("bookmark", tostring(lid))
+        print("lastL", LastLine)
+        LastBeat = ReadMarkBeat(LastLine)
+        if BeatLarger(curBeat, LastBeat) then
+            LastLine = Editor:ReadData("bookmark", tostring(i))
             Editor:SeekTo(LastBeat)
             return
         end
     end
-    LastLine=Editor:ReadData("bookmark",tostring(math.ceil(cnt-1)))
-    LastBeat=ReadMarkBeat(LastLine)
+    LastLine = Editor:ReadData("bookmark", tostring(math.ceil(cnt - 1)))
+    LastBeat = ReadMarkBeat(LastLine)
     Editor:SeekTo(LastBeat)
 end

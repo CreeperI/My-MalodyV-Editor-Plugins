@@ -1,8 +1,4 @@
-<<<<<<< HEAD
--- Plugin By Creeper_001
-=======
 --Plugin By Creeper_001
->>>>>>> 6565d4d354a094c0b4ce39fb2ee1c0ae3957da7b
 PluginName = "‎删除书签"
 PluginType = 0
 PluginMode = 7
@@ -18,17 +14,17 @@ function WriteBookMarks()
 end
 
 function CheckHaveMark(beat)
-    local cnt=tonumber(Editor:ReadData("bookmark","count"))
-    local beat_text=string.format("{%d,%d,%d}",beat.beat,beat.numor,beat.denom)
-    local line,result
-    for i=0,cnt-1 do
-        line=Editor:ReadData("bookmark",tostring(i))
-        result=string.find(line,beat_text)
-        if result~=nil then
-            return true,i
+    local cnt = tonumber(Editor:ReadData("bookmark", "count"))
+    local beat_text = string.format("{%d,%d,%d}", beat.beat, beat.numor, beat.denom)
+    local line, result
+    for i = 0, cnt - 1 do
+        line = Editor:ReadData("bookmark", tostring(i))
+        result = string.find(line, beat_text)
+        if result ~= nil then
+            return true, i
         end
     end
-    return false,nil
+    return false, nil
 end
 
 function Beat2ID(b)
@@ -37,23 +33,23 @@ function Beat2ID(b)
 end
 
 function Run()
-    local cnt=tonumber(Editor:ReadData("bookmark","count"))
-    local curBeat=Editor:GetCurrentBeat()
-    local haveMark,ConfilctID=CheckHaveMark(curBeat)
+    local cnt = tonumber(Editor:ReadData("bookmark", "count"))
+    local curBeat = Editor:GetCurrentBeat()
+    local haveMark, ConfilctID = CheckHaveMark(curBeat)
     if not haveMark then
         Editor:ShowMessage("此处没有书签")
         return
     end
 
-    local nextData=""
-    for i=ConfilctID,cnt-2 do
-        nextData=Editor:ReadData("bookmark",tostring(i+1))
-        Editor:WriteData("bookmark",tostring(i),nextData)
+    local nextData = ""
+    for i = ConfilctID, cnt - 2 do
+        nextData = Editor:ReadData("bookmark", tostring(i + 1))
+        Editor:WriteData("bookmark", tostring(i), nextData)
     end
-    Editor:WriteData("bookmark",tostring(cnt-1),"")
-    Editor:WriteData("bookmark","count",tostring(cnt-1))
-    Editor:RemoveModule("bookmark_line:"..Beat2ID(curBeat))
-    Editor:RemoveModule("bookmark_content:"..Beat2ID(curBeat))
+    Editor:WriteData("bookmark", tostring(cnt - 1), "")
+    Editor:WriteData("bookmark", "count", tostring(cnt - 1))
+    Editor:RemoveModule("bookmark_line:" .. Beat2ID(curBeat))
+    Editor:RemoveModule("bookmark_content:" .. Beat2ID(curBeat))
     WriteBookMarks()
     Editor:ShowMessage("书签已删除")
 end

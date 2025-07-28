@@ -3,7 +3,6 @@ PluginName = "‎读取书签"
 PluginType = 0
 PluginMode = 7
 PluginRequire = "6.0.52"
-Slide = 2048
 
 function Beat2ID(b)
     local b_text = tostring(b.beat) .. tostring(b.numor) .. tostring(b.denom)
@@ -20,25 +19,25 @@ function DrawBookMark(beat, content, bid)
     line.Beat = beat
     text.Beat = beat
     line.X = 87.5
-    local contLeng=utf8.len(content)
-    if contLeng<=10 then
-            text.X = 87.5
-        elseif (contLeng >10) and (contLeng<=20) then
-            text.X =87.5-(contLeng-10)*1.75
-        else
-            text.X=70
-            local finaltext=""
-            local enterCount = contLeng//20
-            local l,r=0,0
-            for i=0,enterCount do
-                l,r=utf8.offset(content,1+(20*i)),utf8.offset(content,20*(1+i)+1)
-                r=r or #content
-                if r~=#content then r=r-1 end 
-                finaltext=finaltext..string.sub(content,l,r).." \n"
-            end
-            finaltext=string.sub(finaltext,1,#finaltext-1)
-            text.Text=finaltext
+    local contLeng = utf8.len(content)
+    if contLeng <= 10 then
+        text.X = 87.5
+    elseif (contLeng > 10) and (contLeng <= 20) then
+        text.X = 87.5 - (contLeng - 10) * 1.75
+    else
+        text.X = 70
+        local finaltext = ""
+        local enterCount = contLeng // 20
+        local l, r = 0, 0
+        for i = 0, enterCount do
+            l, r = utf8.offset(content, 1 + (20 * i)), utf8.offset(content, 20 * (1 + i) + 1)
+            r = r or #content
+            if r ~= #content then r = r - 1 end
+            finaltext = finaltext .. string.sub(content, l, r) .. " \n"
         end
+        finaltext = string.sub(finaltext, 1, #finaltext - 1)
+        text.Text = finaltext
+    end
     line.Width = 25
     line.Height = 30
     line:SetColor(81, 133, 255)

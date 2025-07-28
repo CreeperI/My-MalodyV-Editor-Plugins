@@ -1,8 +1,4 @@
-<<<<<<< HEAD
--- Plugin By Creeper_001
-=======
 --Plugin By Creeper_001
->>>>>>> 6565d4d354a094c0b4ce39fb2ee1c0ae3957da7b
 PluginName = "‎添修书签"
 PluginType = 0
 PluginMode = 7
@@ -22,8 +18,6 @@ function ReadBookMark(line)
 end
 
 function BeatLarger(b1, b2)
-    PrintBeat(b1, "BeatLarger_b1:")
-    PrintBeat(b2, "BeatLarger_b2:")
     if b1.beat > b2.beat then
         return true
     elseif b1.beat == b2.beat then
@@ -86,7 +80,7 @@ end
 
 function ProcessMarkText(content, text_mod)
     local contLeng = utf8.len(content)
-    text_mod.Text=content
+    text_mod.Text = content
     if contLeng <= 10 then
         text_mod.X = 87.5
     elseif (contLeng > 10) and (contLeng <= 20) then
@@ -152,7 +146,7 @@ function Main(userinput)
         tip = "已修改此处书签"
         Editor:WriteData("bookmark", confilctID, FormatBookMark(curBeat, name))
         local text = Editor:FindModule("bookmark_content:" .. Beat2ID(curBeat))
-        ProcessMarkText(name,text)
+        ProcessMarkText(name, text)
         goto writeFile
     end
 
