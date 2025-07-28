@@ -1,3 +1,4 @@
+--Plugin By Creeper_001
 PluginName = "‎上个书签"
 PluginType = 0
 PluginMode = 7
@@ -10,7 +11,6 @@ function ReadMarkBeat(line)
     end
 end
 
--- return b1>b2 
 function BeatLarger(b1, b2)
     if b1.beat > b2.beat then
         return true
