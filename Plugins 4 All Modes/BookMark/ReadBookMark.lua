@@ -47,11 +47,6 @@ end
 
 function Run()
     local i = 0
-    -- if Editor:ReadData("bookmark", "enabled") == "true" then
-    --     Editor:ShowMessage("书签读取过了")
-    --     return
-    -- end
-    print(utf8.offset("a好好好",3))
     local content_file = Editor:ReadFile("BookMark.txt")
     if (content_file == nil) or (content_file == "") then
         Editor:ShowMessage("书签文件不存在")
@@ -59,7 +54,6 @@ function Run()
     end
 
     for b1, b2, b3, content in string.gmatch(content_file, "Beat:{(%d+),(%d+),(%d+)},Content:([^;]+);") do
-        -- print(b1,b2,b3,content)
         local beat = Editor:MakeBeat(b1, b2, b3)
         DrawBookMark(beat, content, Beat2ID(beat))
         Editor:WriteData("bookmark", tostring(i), FormatBookMark(beat, content))
